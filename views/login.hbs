@@ -1,0 +1,29 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<div><a href="/">Home</a></div> <br /><br />
+
+
+{{ message }}
+
+<form action="/auth/login" method="POST" id="form">
+    <h2>Login</h2>
+
+    <label for="username">Username</label>
+    <input type="text" name="username">
+
+    <label for="password">Password</label>
+    <input type="password" name="password">
+
+    {{#if errorMessage }}
+    <div class="error-message">
+        <p>{{ errorMessage }}</p>
+    </div>
+    {{/if}}
+
+    <button>Login</button>
+
+    <p class="account-message">
+        Don't have an account? <a href="/auth/signup">Signup</a>
+    </p>
+</form>
